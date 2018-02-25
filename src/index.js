@@ -8,7 +8,7 @@ module.exports = function getZerosCount(number, base) {
             max = nat[i];
         }
         if(nat[i] > base){
-            i = nat.length;
+            break;
         }
     }
     var aux_number = 1;
