@@ -25,7 +25,28 @@ module.exports = function getZerosCount(number, base) {
             dividers.push([nat[i],countMinN(base,nat[i])]);
         }
         if(nat[i+1] > base) break;
+    } //with nat and dividers
+
+    /*function isNat(base){
+        var nat = [2, 3, 5, 7, 11, 13, 17];
+        for(let i=0;i<nat.length;i++){
+            if(base % nat[i] == 0){
+                var result = result || [];
+                result.push([nat[i],countMinN(base,nat[i])]);
+            }
+        }
+        if(!result) return [[base,1]];
+        //return result;
+        var test = 1;
+        for(let i=0;i<result.length;i++){test *= result[i][0] ** result[i][1];}
+        if(test == base){
+            return result;
+        }else{
+            result.push([base/test,1]);
+            return result;
+        }
     }
+    var dividers = isNat(base);*/ //without nat and dividers
 
     for(let i = 0; i < dividers.length; i++){
         dividers[i] = [dividers[i][0],dividers[i][1],Math.floor(countMinNFact(number,dividers[i][0])/dividers[i][1])];
